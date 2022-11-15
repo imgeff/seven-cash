@@ -1,0 +1,22 @@
+{
+  "name": "challenge-ng-cash",
+  "version": "1.0.0",
+  "description": "Desafio técnico da NG.Cash",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "cd ./back-end && npm i && cd .. && cd ./front-end && npm i",
+    "start:back": "cd ./back-end && npm start",
+    "start:front": "cd ./front-end && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imgeff/ng-cash-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imgeff/ng-cash-challenge/issues"
+  },
+  "homepage": "https://github.com/imgeff/ng-cash-challenge#readme"
+}
