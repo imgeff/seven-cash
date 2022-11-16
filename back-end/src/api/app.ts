@@ -1,11 +1,14 @@
 import express from 'express';
+import { ErrorManager } from '../middlewares/error';
+import { IRoute } from '../routes/interfaces/IRoute';
 
 class App {
   public app: express.Express;
 
-  constructor() {
+  constructor(routes: IRoute[]) {
     this.app = express();
     this.config();
+    this.routes(routes);
   }
 
   private config():void {
@@ -18,6 +21,14 @@ class App {
 
     this.app.use(accessControl);
     this.app.use(express.json());
+  }
+
+  private routes(routes: IRoute[]):void {
+    for (const route of routes) {
+      this.app.use(route.name, route.router);
+    }
+
+    this.app.use(ErrorManager.catch);
   }
 
   public start(PORT: string | number):void {
