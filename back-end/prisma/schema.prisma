@@ -11,11 +11,11 @@ datasource db {
 }
 
 model Account {
-  id                  Int           @id @default(autoincrement())
-  balance             Float       @default(100)
-  user                User?
-  transactionDebited  Transaction[] @relation("transactionDebited")
-  transactionCredited Transaction[] @relation("transactionCredited")
+  id                 Int           @id @default(autoincrement())
+  balance            Float         @default(100)
+  user               User?
+  debitTransactions  Transaction[] @relation("debitTransactions")
+  creditTransactions Transaction[] @relation("creditTransactions")
 
   @@map("Accounts")
 }
@@ -31,13 +31,13 @@ model User {
 }
 
 model Transaction {
-  id                  Int      @id @default(autoincrement())
-  transactionDebited  Account  @relation("transactionDebited", fields: [debitedAccountId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  transactionCredited Account  @relation("transactionCredited", fields: [creditedAccountId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  debitedAccountId    Int      @unique
-  creditedAccountId   Int      @unique
-  value               Float
-  createdAt           DateTime @default(now())
+  id                 Int      @id @default(autoincrement())
+  debitTransactions  Account  @relation("debitTransactions", fields: [debitedAccountId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  creditTransactions Account  @relation("creditTransactions", fields: [creditedAccountId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  debitedAccountId   Int
+  creditedAccountId  Int
+  value              Float
+  createdAt          DateTime @default(now())
 
   @@map("Transactions")
 }
