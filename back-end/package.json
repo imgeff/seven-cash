@@ -2,7 +2,7 @@
   "name": "challenge-ng-cash",
   "version": "1.0.0",
   "description": "Api do desafio técnico da NG.Cash",
-  "main": "./dist/src/api/server.js",
+  "main": "./dist/api/server.js",
   "scripts": {
     "build": "/bin/sh tsc_build.sh",
     "dev": "tsnd --transpile-only --respawn src/api/server.ts",
