@@ -37,7 +37,7 @@ export class AccountService implements IAccountService {
   public async getTransactions(id: number) {
     const accountTransactions = await this._database.account.findFirst({ 
       where: { id },
-      include: { transactionCredited: true, transactionDebited: true },
+      include: { creditTransactions: true, debitTransactions: true },
     });
 
     if (accountTransactions === undefined) {
@@ -50,7 +50,7 @@ export class AccountService implements IAccountService {
   public async getCashOutTransactions(id: number) {
     const accountCashOutTransactions = await this._database.account.findFirst({ 
       where: { id },
-      include: { transactionDebited: true },
+      include: { debitTransactions: true },
     });
 
     if (accountCashOutTransactions === undefined) {
@@ -63,7 +63,7 @@ export class AccountService implements IAccountService {
   public async getCashInTransactions(id: number) {
     const accountCashInTransactions = await this._database.account.findFirst({ 
       where: { id },
-      include: { transactionCredited: true },
+      include: { creditTransactions: true },
     });
 
     if (accountCashInTransactions === undefined) {
@@ -80,10 +80,10 @@ export class AccountService implements IAccountService {
     const accountTransactions = await this._database.account.findFirst({ 
       where: { id },
       include: { 
-        transactionCredited: {
+        creditTransactions: {
           where: { createdAt: { gte: dateLimitStart, lte: dateLimitEnd } },
         },
-        transactionDebited: {
+        debitTransactions: {
           where: { createdAt: { gte: dateLimitStart, lte: dateLimitEnd } },
         },
       },

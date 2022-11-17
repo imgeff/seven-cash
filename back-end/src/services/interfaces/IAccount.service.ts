@@ -6,17 +6,17 @@ export interface IAccountService {
   update({ id, balance }: IAccount): Promise<IAccount>;
   getBalance(id: number): Promise<number | void>;
   getTransactions(id: number): Promise<(Account & { 
-    transactionDebited: Transaction[];
-    transactionCredited: Transaction[];
+    debitTransactions: Transaction[];
+    creditTransactions: Transaction[];
   }) | null>;
   getCashOutTransactions(id: number): Promise<(Account & { 
-    transactionDebited: Transaction[];
+    debitTransactions: Transaction[];
   }) | null>;
   getCashInTransactions(id: number): Promise<(Account & { 
-    transactionCredited: Transaction[];
+    creditTransactions: Transaction[];
   }) | null>;
   getTransactionsByDate(id: number, date: string): Promise<(Account & { 
-    transactionDebited: Transaction[];
-    transactionCredited: Transaction[];
+    debitTransactions: Transaction[];
+    creditTransactions: Transaction[];
   }) | null>;
 }
