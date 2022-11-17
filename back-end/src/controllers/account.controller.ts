@@ -4,6 +4,7 @@ import { StatusCodes } from "http-status-codes";
 import { IAccountService } from "../services/interfaces/IAccount.service";
 import { IAccountController } from "./interfaces/IAccount.controller";
 import { IUserEntityResponse } from '../database/entities/IUser.entity';
+import { ThrowError } from '../helpers/error';
 
 interface IGetTransactionsBody {
   payload: IUserEntityResponse;
@@ -28,6 +29,17 @@ export class AccountController implements IAccountController {
     const { payload: { accountId: id } }: IGetTransactionsBody = req.body;
 
     const accountTransactions = await this._accountService.getTransactions(id);
+
+    return res.status(StatusCodes.OK).json(accountTransactions);
+  }
+
+  public async getTransactionsByDate(req: Request, res: Response): Promise<Response> {
+    const { date } = req.query;
+    const { payload: { accountId: id } }: IGetTransactionsBody = req.body;
+
+    if (!date) ThrowError.NotFound('', 'Invalid date!');
+
+    const accountTransactions = await this._accountService.getTransactionsByDate(id, date as string);
 
     return res.status(StatusCodes.OK).json(accountTransactions);
   }
