@@ -25,6 +25,15 @@ export class AccountService implements IAccountService {
     ThrowError.NotFound('Account');
   }
 
+  public async update({ id, balance }: IAccount): Promise<IAccount> {
+    const accountUpdated = await this._database.account.update({ 
+      where: { id },
+      data: { balance }
+    });
+
+    return accountUpdated;
+  }
+
   public async getTransactions(id: number) {
     const accountTransactions = await this._database.account.findFirst({ 
       where: { id },
