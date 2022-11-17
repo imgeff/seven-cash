@@ -11,7 +11,7 @@ export const errors: IError[] = [
   },
   {
     code: 404,
-    types: ['NotFoundError'],
+    types: ['NotFoundError', 'RecordNotFound'],
   },
   {
     code: 409,
