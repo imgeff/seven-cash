@@ -6,7 +6,7 @@ import { IAccountController } from "./interfaces/IAccount.controller";
 import { IUserEntityResponse } from '../database/entities/IUser.entity';
 import { ThrowError } from '../helpers/error';
 
-interface IGetTransactionsBody {
+interface IPayloadBody {
   payload: IUserEntityResponse;
 }
 
@@ -18,7 +18,7 @@ export class AccountController implements IAccountController {
   }
 
   public async getBalance(req: Request, res: Response): Promise<Response> {
-    const { accountId: id }: IUserEntityResponse = req.body;
+    const { payload: { accountId: id } }: IPayloadBody = req.body;
 
     const balance = await this._accountService.getBalance(id);
 
@@ -26,7 +26,7 @@ export class AccountController implements IAccountController {
   }
 
   public async getTransactions(req: Request, res: Response): Promise<Response> {
-    const { payload: { accountId: id } }: IGetTransactionsBody = req.body;
+    const { payload: { accountId: id } }: IPayloadBody = req.body;
 
     const accountTransactions = await this._accountService.getTransactions(id);
 
@@ -34,7 +34,7 @@ export class AccountController implements IAccountController {
   }
 
   public async getCashOutTransactions(req: Request, res: Response): Promise<Response> {
-    const { payload: { accountId: id } }: IGetTransactionsBody = req.body;
+    const { payload: { accountId: id } }: IPayloadBody = req.body;
 
     const accountCashOutTransactions = await this._accountService.getCashOutTransactions(id);
 
@@ -42,7 +42,7 @@ export class AccountController implements IAccountController {
   }
 
   public async getCashInTransactions(req: Request, res: Response): Promise<Response> {
-    const { payload: { accountId: id } }: IGetTransactionsBody = req.body;
+    const { payload: { accountId: id } }: IPayloadBody = req.body;
 
     const accountCashInTransactions = await this._accountService.getCashInTransactions(id);
 
@@ -51,7 +51,7 @@ export class AccountController implements IAccountController {
 
   public async getTransactionsByDate(req: Request, res: Response): Promise<Response> {
     const { date } = req.query;
-    const { payload: { accountId: id } }: IGetTransactionsBody = req.body;
+    const { payload: { accountId: id } }: IPayloadBody = req.body;
 
     if (!date) ThrowError.NotFound('', 'Invalid date!');
 
