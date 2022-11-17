@@ -8,4 +8,8 @@ export interface IAccountService {
     transactionDebited: Transaction[];
     transactionCredited: Transaction[];
   }) | null>;
+  getTransactionsByDate(id: number, date: string): Promise<(Account & { 
+    transactionDebited: Transaction[];
+    transactionCredited: Transaction[];
+  }) | null>;
 }
