@@ -34,13 +34,24 @@ export class UserService implements IUserService {
         const { id, accountId, username } = user;
         userResponse = { id, accountId, username };
       } else {
-        ThrowError.NotAuthorized('User');
+        ThrowError.NotAuthorized('', 'Incorrect username or password');
       }
     } else {
       ThrowError.NotFound('User');
     }
 
     return userResponse as IUserEntityResponse;
+  }
+
+  public async getByUsername(username: string) {
+    const user = await this._database.user.findFirst({
+      where: { username },
+      include: { account: true }
+    });
+    if (!user) {
+      ThrowError.NotFound('User');
+    }
+    return user;
   }
   
 }
