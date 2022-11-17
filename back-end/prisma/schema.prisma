@@ -34,8 +34,8 @@ model Transaction {
   id                  Int      @id @default(autoincrement())
   transactionDebited  Account  @relation("transactionDebited", fields: [debitedAccountId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   transactionCredited Account  @relation("transactionCredited", fields: [creditedAccountId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  debitedAccountId    Int      @unique
-  creditedAccountId   Int      @unique
+  debitedAccountId    Int
+  creditedAccountId   Int
   value               Float
   createdAt           DateTime @default(now())
 
