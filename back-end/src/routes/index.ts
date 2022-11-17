@@ -1,5 +1,6 @@
 import { IRoute } from "./interfaces/IRoute";
 import { transactionRouter } from "./transaction.route";
+import { accountRouter } from "./account.route";
 import { userRouter } from "./user.route";
 
 export const routes: IRoute[] = [
@@ -9,6 +10,10 @@ export const routes: IRoute[] = [
   },
   {
     name: '/transaction',
-    router: transactionRouter
+    router: transactionRouter,
+  },
+  {
+    name: '/account',
+    router: accountRouter,
   }
 ]
