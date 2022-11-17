@@ -11,6 +11,9 @@ export interface IAccountService {
   getCashOutTransactions(id: number): Promise<(Account & { 
     transactionDebited: Transaction[];
   }) | null>;
+  getCashInTransactions(id: number): Promise<(Account & { 
+    transactionCredited: Transaction[];
+  }) | null>;
   getTransactionsByDate(id: number, date: string): Promise<(Account & { 
     transactionDebited: Transaction[];
     transactionCredited: Transaction[];
