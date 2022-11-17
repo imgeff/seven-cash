@@ -33,6 +33,14 @@ export class AccountController implements IAccountController {
     return res.status(StatusCodes.OK).json(accountTransactions);
   }
 
+  public async getCashOutTransactions(req: Request, res: Response): Promise<Response> {
+    const { payload: { accountId: id } }: IGetTransactionsBody = req.body;
+
+    const accountCashOutTransactions = await this._accountService.getCashOutTransactions(id);
+
+    return res.status(StatusCodes.OK).json(accountCashOutTransactions);
+  }
+
   public async getTransactionsByDate(req: Request, res: Response): Promise<Response> {
     const { date } = req.query;
     const { payload: { accountId: id } }: IGetTransactionsBody = req.body;

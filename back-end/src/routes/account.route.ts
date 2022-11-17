@@ -10,4 +10,6 @@ accountRouter.get('/balance', Token.validate, accountController.getBalance.bind(
 
 accountRouter.get('/transactions', Token.validate, accountController.getTransactions.bind(accountController));
 
+accountRouter.get('/transactions/cashout', Token.validate, accountController.getCashOutTransactions.bind(accountController));
+
 accountRouter.get('/transactions/filter', Token.validate, accountController.getTransactionsByDate.bind(accountController));

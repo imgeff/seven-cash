@@ -38,6 +38,19 @@ export class AccountService implements IAccountService {
     return accountTransactions;
   }
 
+  public async getCashOutTransactions(id: number) {
+    const accountCashOutTransactions = await this._database.account.findFirst({ 
+      where: { id },
+      include: { transactionDebited: true },
+    });
+
+    if (accountCashOutTransactions === undefined) {
+      ThrowError.NotFound('Account');
+    }
+
+    return accountCashOutTransactions;
+  }
+
   public async getTransactionsByDate(id: number, date: string) {
     const dateLimitStart = new Date(`${date} 00:00:00`).toISOString();
     const dateLimitEnd = new Date(`${date} 23:59:59`).toISOString();
