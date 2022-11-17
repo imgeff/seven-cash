@@ -1,4 +1,3 @@
-import { Account } from "@prisma/client";
 import { Database } from "../database";
 import { IAccount } from "../database/entities/IAccount.entity";
 import { ThrowError } from "../helpers/error";
@@ -24,6 +23,19 @@ export class AccountService implements IAccountService {
     }
 
     ThrowError.NotFound('Account');
+  }
+
+  public async getTransactions(id: number) {
+    const accountTransactions = await this._database.account.findFirst({ 
+      where: { id },
+      include: { transactionCredited: true, transactionDebited: true },
+    });
+
+    if (accountTransactions === undefined) {
+      ThrowError.NotFound('Account');
+    }
+
+    return accountTransactions;
   }
   
 }

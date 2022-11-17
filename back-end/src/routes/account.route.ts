@@ -7,3 +7,5 @@ export const accountRouter = Router();
 const accountController = AccountFactory.create();
 
 accountRouter.get('/balance', Token.validate, accountController.getBalance.bind(accountController));
+
+accountRouter.get('/transactions', Token.validate, accountController.getTransactions.bind(accountController));
