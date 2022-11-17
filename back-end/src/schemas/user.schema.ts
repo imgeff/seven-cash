@@ -7,3 +7,5 @@ export const UserRegisterSchema = Joi.object({
     'string.pattern.base': messages.invalidPassword,
   }),
 });
+
+export const UserLoginSchema = UserRegisterSchema;
