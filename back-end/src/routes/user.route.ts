@@ -9,3 +9,5 @@ const userController = UserFactory.create();
 const userValidation = new UserValidation();
 
 userRouter.post('/register', userValidation.register, userController.register.bind(userController));
+
+userRouter.post('/login', userValidation.login, userController.login.bind(userController));
