@@ -51,6 +51,19 @@ export class AccountService implements IAccountService {
     return accountCashOutTransactions;
   }
 
+  public async getCashInTransactions(id: number) {
+    const accountCashInTransactions = await this._database.account.findFirst({ 
+      where: { id },
+      include: { transactionCredited: true },
+    });
+
+    if (accountCashInTransactions === undefined) {
+      ThrowError.NotFound('Account');
+    }
+
+    return accountCashInTransactions;
+  }
+
   public async getTransactionsByDate(id: number, date: string) {
     const dateLimitStart = new Date(`${date} 00:00:00`).toISOString();
     const dateLimitEnd = new Date(`${date} 23:59:59`).toISOString();
