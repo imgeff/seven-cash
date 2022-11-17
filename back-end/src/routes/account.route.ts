@@ -12,4 +12,6 @@ accountRouter.get('/transactions', Token.validate, accountController.getTransact
 
 accountRouter.get('/transactions/cashout', Token.validate, accountController.getCashOutTransactions.bind(accountController));
 
+accountRouter.get('/transactions/cashin', Token.validate, accountController.getCashInTransactions.bind(accountController));
+
 accountRouter.get('/transactions/filter', Token.validate, accountController.getTransactionsByDate.bind(accountController));
