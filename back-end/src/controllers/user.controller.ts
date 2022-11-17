@@ -21,5 +21,14 @@ export class UserController implements IUserController {
 
     return res.status(StatusCodes.CREATED).json({ ...userCreated, token });
   }
+
+  public async login(req: Request, res: Response): Promise<Response> {
+    const { username, password }: IUserEntityRequest = req.body;
+
+    const userLogged = await this._userService.login({ username, password });
+    const token = Token.generate(userLogged);
+
+    return res.status(StatusCodes.OK).json({ ...userLogged, token });
+  }
   
 }

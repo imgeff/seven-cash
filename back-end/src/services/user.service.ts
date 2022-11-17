@@ -1,5 +1,5 @@
 import { Database } from "../database";
-import { hashSync } from "bcryptjs";
+import { compareSync, hashSync } from "bcryptjs";
 import { IUserEntityRequest, IUserEntityResponse } from "../database/entities/IUser.entity";
 import { IUserService } from "./interfaces/IUser.service";
 import { AccountService } from "./account.service";
@@ -21,6 +21,26 @@ export class UserService implements IUserService {
     const { id, accountId, username } = await this._database.user.create({ data: { ...user, accountId: account.id }});
     const userCreated = { id, accountId, username }
     return userCreated;
+  }
+
+  public async login({ username, password }: IUserEntityRequest): Promise<IUserEntityResponse> {
+    const userExists = await this._database.user.findFirst({ where: { username } });
+    let userResponse;
+
+    if (userExists !== null) {
+      const user = userExists;
+      const passwordIsCorrect = compareSync(password, user.password);
+      if (passwordIsCorrect) {
+        const { id, accountId, username } = user;
+        userResponse = { id, accountId, username };
+      } else {
+        ThrowError.NotAuthorized('User');
+      }
+    } else {
+      ThrowError.NotFound('User');
+    }
+
+    return userResponse as IUserEntityResponse;
   }
   
 }
