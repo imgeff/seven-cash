@@ -9,3 +9,5 @@ const accountController = AccountFactory.create();
 accountRouter.get('/balance', Token.validate, accountController.getBalance.bind(accountController));
 
 accountRouter.get('/transactions', Token.validate, accountController.getTransactions.bind(accountController));
+
+accountRouter.get('/transactions/filter', Token.validate, accountController.getTransactionsByDate.bind(accountController));
