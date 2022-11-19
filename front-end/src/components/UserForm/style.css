@@ -26,6 +26,26 @@
 
 #userform-fields label {
 
+	@apply relative
+		w-full
+		flex
+		flex-col
+		gap-3
+		font-medium ;
+}
+
+#userform-fields label #toggle-password-display {
+
+	@apply absolute
+		right-10
+		top-10
+		cursor-pointer
+		hover:scale-95 ;
+}
+
+
+#userform-fields .primary-input {
+
 	@apply w-full
 		flex
 		flex-col
