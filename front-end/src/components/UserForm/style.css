@@ -1,0 +1,48 @@
+.form-y-center {
+
+	@apply flex
+		flex-col
+		justify-center
+		items-center
+		gap-6 ;
+}
+
+#userform {
+
+	@apply w-full
+		max-w-lg
+		py-5
+		px-10 ;
+}
+
+#userform-fields {
+	@apply w-full
+		flex
+		flex-col
+		justify-center
+		items-center
+		gap-5 ;
+}
+
+#userform-fields label {
+
+	@apply w-full
+		flex
+		flex-col
+		gap-3 ;
+}
+
+#userform footer {
+
+	@apply w-full
+		flex
+		flex-col
+		justify-center
+		items-center
+		gap-3 ;
+}
+
+#userform footer .primary-button {
+
+	@apply mt-5 ;
+}
