@@ -42,6 +42,7 @@
         "react/jsx-props-no-spreading": "off",
         "react/jsx-no-bind": "off",
         "jsx-a11y/label-has-associated-control": "off",
-        "react/jsx-no-constructed-context-values": "off"
+        "react/jsx-no-constructed-context-values": "off",
+				"@typescript-eslint/no-explicit-any": "off"
     }
 }
