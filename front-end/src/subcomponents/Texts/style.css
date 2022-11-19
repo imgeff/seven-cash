@@ -1,0 +1,19 @@
+#root .text-large {
+
+  @apply font-bold
+    text-base
+    text-gray-600 ;
+}
+
+#root .text-medium {
+
+  @apply font-semibold
+    text-sm
+    text-gray-600 ;
+}
+
+#root .text-small {
+
+  @apply text-xs
+    text-gray-600 ;
+}
