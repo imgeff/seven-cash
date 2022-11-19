@@ -1,0 +1,50 @@
+#root .primary-button {
+
+  @apply w-full
+    py-3
+    px-10
+		max-h-11
+    flex
+    justify-center
+    items-center
+    gap-3
+    bg-gray-200
+    rounded-md
+    font-bold
+    text-black
+    text-base
+    hover:opacity-80
+    transition-all
+    disabled:cursor-not-allowed
+    disabled:opacity-40
+    lg:text-sm ;
+}
+
+
+#root .secondary-button {
+
+  @apply w-full
+    font-bold
+    bg-transparent
+    text-gray-600
+    text-sm
+    hover:text-gray-200
+    transition-all ;
+}
+
+#root .drop-button {
+
+  @apply py-2
+    px-2
+    rounded-full
+    font-bold
+    bg-transparent
+    text-gray-600
+    text-sm
+    hover:text-gray-200
+    transition-all
+    border-solid
+    border
+    border-gray-200
+    pointer-events-none  ;
+}
