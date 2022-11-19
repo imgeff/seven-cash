@@ -5,11 +5,11 @@
     px-6
     rounded-md
     bg-gray-800
-    text-gray-200
+    text-gray-600
     text-sm
+		font-medium
     outline-none
     focus:outline
     focus:outline-gray-300
-    placeholder:text-gray-600
-    lg:text-sm ;
+    placeholder:text-gray-600 ;
 }

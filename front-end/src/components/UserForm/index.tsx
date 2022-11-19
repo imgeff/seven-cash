@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { TextMedium } from "../../subcomponents/Texts";
 import { IUserFormProps } from "./interfaces/IUserFormProps";
 import { Loading } from "../Loading";
+import { Eye, EyeClosed, EyeSlash } from "phosphor-react";
 
 interface IEventTarget {
 	target: {
@@ -25,6 +26,7 @@ export function UserForm({
 	const [disabledButton, setDisabledButton] = useState(true);
 	const [errorMessages, setErrorMessages] = useState({ username: "", password: "" });
 	const [errorRequest, setErrorRequest] = useState("");
+	const [displayPassword, setDisplayPassword] = useState(false);
 
 	function handleUserData({ target: { name, value } }: IEventTarget) {
 		setUser({ ...user, [name]: value });
@@ -52,6 +54,10 @@ export function UserForm({
 
 	function handleButtonActivation() {
 		setDisabledButton(submitMustBeDisabled());
+	}
+
+	function handlePasswordDisplay() {
+		setDisplayPassword(!displayPassword);
 	}
 
 	useEffect(() => {
@@ -82,12 +88,32 @@ export function UserForm({
 					<PrimaryInput
 						id="userform-field-password"
 						placeholder="* * * * * * * * *"
-						type="password"
+						type={ displayPassword ? "text" : "password" }
 						name="password"
 						value={user.password}
 						onChange={handleUserData}
 						spellCheck={false}
 					/>
+					<span
+						id="toggle-password-display"
+						className="daisy-tooltip"
+						data-tip={displayPassword ? "Esconder Senha" : "Mostrar Senha"}
+					>
+						{ displayPassword ? (
+							<Eye
+								size={24}
+								weight="duotone"
+								color="#565656"
+								onClick={handlePasswordDisplay}
+							/>) : (
+							<EyeSlash
+								size={24}
+								weight="duotone"
+								color="#565656"
+								onClick={handlePasswordDisplay}
+							/>
+						)}
+					</span>
 					<TextMedium style={{ color: "red" }}>{errorMessages.password}</TextMedium>
 				</label>
 			</fieldset>
