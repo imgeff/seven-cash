@@ -7,7 +7,7 @@ const api = axios.create({
 
 export async function requestLogin(body: IUser) {
 	try {
-		const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/user/login`, body);
+		const { data } = await api.post(`${process.env.REACT_APP_BASE_URL}/login`, body);
 		return data;
 	} catch (error: any) {
 		console.error(error);
