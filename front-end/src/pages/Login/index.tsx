@@ -2,17 +2,17 @@ import "./style.css";
 import logoNG from "../../images/logo_ng.png";
 import { UserForm } from "../../components/UserForm";
 import { IUser } from "../../components/UserForm/interfaces/IUser";
-import { SetState } from "../../components/UserForm/interfaces/IUserFormProps";
-import { setItemLocalStorage } from "../../helpers/localstorage";
-import { requestLogin } from "../../services/requests/user";
+import { setItemLocalStorage } from "../../helpers/Localstorage";
+import { requestLogin } from "../../services/requests/User";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { SetState } from "../../types/SetState";
 
 export function Login() {
 	const navigate = useNavigate();
 	const [isLoading, setIsLoading] = useState(false);
 
-	async function handleLogin(data: IUser, setErrorRequest: SetState) {
+	async function handleLogin(data: IUser, setErrorRequest: SetState<string>) {
 		setIsLoading(true);
 		const response = await requestLogin(data);
 		setIsLoading(false);
