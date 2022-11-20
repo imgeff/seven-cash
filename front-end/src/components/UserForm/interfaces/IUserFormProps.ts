@@ -1,10 +1,9 @@
+import { SetState } from "../../../types/SetState";
 import { IUser } from "./IUser";
-
-export type SetState =  React.Dispatch<React.SetStateAction<string>>;
 
 export interface IUserFormProps {
 	textSubmit: string;
-	handleSubmit: (data: IUser, setErrorRequest: SetState) => void;
+	handleSubmit: (data: IUser, setErrorRequest: SetState<string>) => void;
 	textNavigate: string;
 	handleNavigation: () => void;
 	isLoading: boolean;

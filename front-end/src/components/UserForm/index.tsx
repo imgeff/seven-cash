@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { TextMedium } from "../../subcomponents/Texts";
 import { IUserFormProps } from "./interfaces/IUserFormProps";
 import { Loading } from "../Loading";
-import { Eye, EyeClosed, EyeSlash } from "phosphor-react";
+import { Eye, EyeSlash } from "phosphor-react";
 
 interface IEventTarget {
 	target: {
