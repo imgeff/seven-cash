@@ -1,0 +1,14 @@
+#option-card {
+
+	@apply justify-center
+		items-center
+		cursor-pointer
+		hover:scale-110
+		hover:mx-2
+		transition-all ;
+}
+
+#option-card .text-large{
+
+	@apply text-gray-300 ;
+}
