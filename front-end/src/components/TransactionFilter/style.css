@@ -1,0 +1,70 @@
+#filters-transaction {
+
+	@apply absolute
+		top-0
+		w-full
+		flex
+		justify-evenly
+		items-end
+		gap-3
+		bg-gray-200
+		px-2
+		pt-16
+		pb-3 ;
+}
+
+#filters-transaction label {
+
+	@apply text-gray-800
+		font-medium
+		text-center
+		bg-gray-200
+		pt-1
+		flex
+		flex-col ;
+}
+
+#filters-transaction label select {
+
+	@apply w-full
+		h-12
+		text-center
+		mt-2
+		rounded-md
+		border
+		border-solid
+		bg-gray-800
+		text-gray-200
+		focus:outline-gray-800 ;
+}
+
+#filters-transaction  input[type="date"] {
+
+	@apply disabled:cursor-not-allowed
+		disabled:opacity-40 ;
+}
+
+#filters-transaction  input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0.8) brightness(50%) saturate(10000%) hue-rotate(240deg);
+}
+
+#root #filters-transaction .daisy-btn {
+
+	@apply
+		mt-2
+		bg-gray-800
+		text-gray-200
+		normal-case ;
+}
+
+#filters-transaction .primary-button {
+
+	@apply w-40
+		bg-gray-200
+		text-gray-800
+		border-2
+		border-solid
+		border-gray-800
+		py-[1.375rem] ;
+}
