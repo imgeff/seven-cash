@@ -1,0 +1,27 @@
+#transaction-modal .daisy-modal-box {
+
+  @apply max-w-[56.25rem]
+		w-[80%]
+		min-w-[21.875rem]
+		max-h-[56.25rem]
+		h-[60%]
+		px-0
+		py-0 !important;
+}
+
+#transaction-modal .daisy-modal-box .heading-medium {
+
+	@apply text-gray-700 ;
+}
+
+#transaction-modal-table {
+
+	@apply w-full
+		my-auto
+		pt-20
+		flex
+		flex-col
+		justify-center
+		items-center ;
+}
+
