@@ -1,10 +1,12 @@
 #welcome-card {
 
 	@apply justify-center
-		h-40 ;
+		h-40
+		sm:h-32 ;
 }
 
 #welcome-card .heading-large {
 
 	@apply md:text-2xl
+		sm:text-lg	;
 }

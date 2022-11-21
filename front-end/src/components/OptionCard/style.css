@@ -11,5 +11,6 @@
 #option-card .text-large{
 
 	@apply text-gray-300
-		md:text-sm ;
+		md:text-sm
+		sm:text-xs ;
 }

@@ -15,19 +15,22 @@
 #balance-card {
 
 	@apply justify-between
-		h-40 ;
+		h-40
+		sm:h-32 ;
 }
 
 #root #balance-card .heading-medium {
 
-	@apply text-xl ;
+	@apply md:text-xl
+		sm:text-base ;
 }
 
 #balance-card footer {
 
 	@apply flex
 		justify-between
-		items-center ;
+		items-center
+		sm:text-sm ;
 }
 
 #balance-card footer span {
