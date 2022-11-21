@@ -2,17 +2,18 @@ import "./style.css";
 import logoNGBlack from "../../images/logo_ng_black.png";
 import { UserForm } from "../../components/UserForm";
 import { IUser } from "../../components/UserForm/interfaces/IUser";
-import { SetState } from "../../components/UserForm/interfaces/IUserFormProps";
-import { setItemLocalStorage } from "../../helpers/localstorage";
-import { requestRegister } from "../../services/requests/user";
+import { setItemLocalStorage } from "../../helpers/Localstorage";
+import { requestRegister } from "../../services/requests/User";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext } from "react";
+import { SetState } from "../../types/SetState";
+import { GlobalContext } from "../../contexts/Global";
 
 export function Register() {
 	const navigate = useNavigate();
-	const [isLoading, setIsLoading] = useState(false);
+	const { loading: { setIsLoading } } = useContext(GlobalContext);
 
-	async function handleRegister(data: IUser, setErrorRequest: SetState) {
+	async function handleRegister(data: IUser, setErrorRequest: SetState<string>) {
 		setIsLoading(true);
 		const response = await requestRegister(data);
 		setIsLoading(false);
@@ -38,7 +39,6 @@ export function Register() {
 				textNavigate="Voltar Para a Página de Login"
 				handleSubmit={handleRegister}
 				handleNavigation={handleNavigation}
-				isLoading={isLoading}
 				colorLoading="#FFFFFF"
 			/>
 		</section>

@@ -1,0 +1,36 @@
+.table {
+
+	@apply w-[98%]
+		mt-5
+		rounded-md
+		border-2
+		border-solid
+		border-gray-800
+		bg-white ;
+}
+
+.table th {
+
+	@apply font-semibold
+		text-black
+		py-1
+		bg-gray-300 ;
+}
+
+.table td {
+
+	@apply font-medium
+		text-center
+		py-1
+		text-gray-600 ;
+}
+
+.table tbody tr:nth-child(2) {
+
+	@apply bg-gray-800 ;
+}
+
+.table tbody tr:nth-child(2) td {
+
+	@apply text-gray-200 ;
+}

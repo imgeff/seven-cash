@@ -1,11 +1,12 @@
 import "./style.css";
 import { PrimaryInput } from "../../subcomponents/Inputs";
 import { PrimaryButton, SecondaryButton } from "../../subcomponents/Buttons";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { TextMedium } from "../../subcomponents/Texts";
 import { IUserFormProps } from "./interfaces/IUserFormProps";
 import { Loading } from "../Loading";
-import { Eye, EyeClosed, EyeSlash } from "phosphor-react";
+import { Eye, EyeSlash } from "phosphor-react";
+import { GlobalContext } from "../../contexts/Global";
 
 interface IEventTarget {
 	target: {
@@ -19,7 +20,6 @@ export function UserForm({
 	handleSubmit,
 	textNavigate,
 	handleNavigation,
-	isLoading,
 	colorLoading,
 }: IUserFormProps) {
 	const [user, setUser] = useState({ username: "", password: "" });
@@ -27,6 +27,7 @@ export function UserForm({
 	const [errorMessages, setErrorMessages] = useState({ username: "", password: "" });
 	const [errorRequest, setErrorRequest] = useState("");
 	const [displayPassword, setDisplayPassword] = useState(false);
+	const { loading: { isLoading } } = useContext(GlobalContext);
 
 	function handleUserData({ target: { name, value } }: IEventTarget) {
 		setUser({ ...user, [name]: value });

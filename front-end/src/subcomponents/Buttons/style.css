@@ -13,10 +13,11 @@
     font-bold
     text-black
     text-base
-    hover:opacity-80
+    hover:scale-95
     transition-all
     disabled:cursor-not-allowed
     disabled:opacity-40
+		disabled:hover:scale-100
     lg:text-sm ;
 }
 
