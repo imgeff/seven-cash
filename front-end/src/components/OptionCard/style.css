@@ -5,10 +5,20 @@
 		cursor-pointer
 		hover:scale-110
 		hover:mx-2
-		transition-all ;
+		transition-all
+		xs:px-3
+		xs:py-3 ;
 }
 
 #option-card .text-large{
 
-	@apply text-gray-300 ;
+	@apply text-gray-300
+		md:text-sm
+		sm:text-xs
+		xs:text-[10px] ;
+}
+
+#option-card svg {
+	@apply xs:aspect-square
+		xs:w-10
 }

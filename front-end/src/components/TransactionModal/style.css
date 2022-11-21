@@ -6,7 +6,8 @@
 		max-h-[56.25rem]
 		h-[60%]
 		px-0
-		py-0 !important;
+		py-0
+		md:h-4/5 !important;
 }
 
 #transaction-modal .daisy-modal-box .heading-medium {
@@ -22,6 +23,8 @@
 		flex
 		flex-col
 		justify-center
-		items-center ;
+		items-center
+		md:mb-20
+		md:mt-auto ;
 }
 

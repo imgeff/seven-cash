@@ -10,7 +10,11 @@
 		bg-gray-200
 		px-2
 		pt-16
-		pb-3 ;
+		pb-3
+		md:flex-col
+		md:justify-center
+		md:items-center
+		md:pt-8 ;
 }
 
 #filters-transaction label {
@@ -21,7 +25,8 @@
 		bg-gray-200
 		pt-1
 		flex
-		flex-col ;
+		flex-col
+		md:w-full ;
 }
 
 #filters-transaction label select {
