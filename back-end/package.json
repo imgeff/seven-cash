@@ -6,7 +6,7 @@
   "scripts": {
     "build": "/bin/sh tsc_build.sh",
     "dev": "tsnd --transpile-only --respawn src/api/server.ts",
-    "prestart": "npm run build",
+    "prestart": "npx prisma migrate dev && npm run build",
     "start": "node ."
   },
   "keywords": [],
