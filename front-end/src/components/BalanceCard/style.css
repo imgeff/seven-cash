@@ -7,13 +7,20 @@
 		rounded-md
 		border-2
 		border-solid
-		border-gray-600 ;
+		border-gray-600
+		md:px-5
+		md:py-5 ;
 }
 
 #balance-card {
 
 	@apply justify-between
 		h-40 ;
+}
+
+#root #balance-card .heading-medium {
+
+	@apply text-xl ;
 }
 
 #balance-card footer {

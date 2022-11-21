@@ -14,7 +14,7 @@ module.exports = {
 
       lg: { max: '1023px' },
 
-      md: { max: '767px' },
+      md: { max: '788px' },
 
       sm: { max: '639px' },
     },

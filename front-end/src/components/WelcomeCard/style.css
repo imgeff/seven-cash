@@ -3,3 +3,8 @@
 	@apply justify-center
 		h-40 ;
 }
+
+#welcome-card .heading-large {
+
+	@apply md:text-2xl
+}
