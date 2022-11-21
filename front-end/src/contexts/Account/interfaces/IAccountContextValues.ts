@@ -1,3 +1,4 @@
+import { ITransaction } from "../../../components/TransactionTable/interfaces/ITransaction";
 import { IUserLocalStorage } from "../../../helpers/Localstorage/interfaces/IUserLocalStorage";
 
 export interface IAccountContextValues {
@@ -10,6 +11,8 @@ export interface IAccountContextValues {
     username: string;
     token: string;
 	}>>;
+	transactions: ITransaction[];
+	setTransactions: React.Dispatch<React.SetStateAction<ITransaction[]>>;
 	errorRequest: string;
 	setErrorRequest: React.Dispatch<React.SetStateAction<string>>;
 }

@@ -1,6 +1,7 @@
 import { createContext, SetStateAction } from "react";
 import { IAccountContextValues } from "./interfaces/IAccountContextValues";
 import { IUserLocalStorage } from "../../helpers/Localstorage/interfaces/IUserLocalStorage";
+import { ITransaction } from "../../components/TransactionTable/interfaces/ITransaction";
 
 const contextDefaultValues: IAccountContextValues = {
 	balance: 0,
@@ -14,6 +15,10 @@ const contextDefaultValues: IAccountContextValues = {
 		token: "",
 	},
 	setUser: function (value: SetStateAction<IUserLocalStorage>): void {
+		throw new Error("Function not implemented.");
+	},
+	transactions: [],
+	setTransactions: function (value: SetStateAction<ITransaction[]>): void {
 		throw new Error("Function not implemented.");
 	},
 	errorRequest: "",
