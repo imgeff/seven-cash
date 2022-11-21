@@ -7,18 +7,13 @@ import { Loading } from "../Loading";
 import { requestTransfer } from "../../services/requests/Transaction";
 import { AccountContext } from "../../contexts/Account";
 import { getBalance } from "../../contexts/Account/services";
-
-interface IEventTarget {
-	target: {
-		name: string;
-		value: string;
-	}
-}
+import { IEventTarget } from "../../interfaces/IEventTarget";
+import { GlobalContext } from "../../contexts/Global";
 
 export function TransferForm() {
 	const [transfer, setTransfer] = useState({ username: "", value: "0.00" });
-	const [isLoading, setIsLoading] = useState(false);
 	const [errorRequest, setErrorRequest] = useState("");
+	const { loading: { isLoading, setIsLoading } } = useContext(GlobalContext);
 	const { setBalance, setErrorRequest: setErrorRequestBalance } = useContext(AccountContext);
 
 	function handleTransferData({ target: { name, value } }: IEventTarget) {

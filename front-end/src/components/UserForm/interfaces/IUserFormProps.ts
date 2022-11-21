@@ -6,6 +6,5 @@ export interface IUserFormProps {
 	handleSubmit: (data: IUser, setErrorRequest: SetState<string>) => void;
 	textNavigate: string;
 	handleNavigation: () => void;
-	isLoading: boolean;
 	colorLoading: string;
 }

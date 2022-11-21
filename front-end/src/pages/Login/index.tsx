@@ -5,12 +5,13 @@ import { IUser } from "../../components/UserForm/interfaces/IUser";
 import { setItemLocalStorage } from "../../helpers/Localstorage";
 import { requestLogin } from "../../services/requests/User";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext } from "react";
 import { SetState } from "../../types/SetState";
+import { GlobalContext } from "../../contexts/Global";
 
 export function Login() {
 	const navigate = useNavigate();
-	const [isLoading, setIsLoading] = useState(false);
+	const { loading: { setIsLoading } } = useContext(GlobalContext);
 
 	async function handleLogin(data: IUser, setErrorRequest: SetState<string>) {
 		setIsLoading(true);
@@ -38,7 +39,6 @@ export function Login() {
 				textNavigate="Ainda não tem conta? Crie aqui :)"
 				handleSubmit={handleLogin}
 				handleNavigation={handleNavigation}
-				isLoading={isLoading}
 				colorLoading="#000000"
 			/>
 		</section>
