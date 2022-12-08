@@ -1,4 +1,5 @@
 import "./style.css";
+import React from "react";
 import logoNGBlack from "../../images/logo_ng_black.png";
 import { UserForm } from "../../components/UserForm";
 import { IUser } from "../../components/UserForm/interfaces/IUser";

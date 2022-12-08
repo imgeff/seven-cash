@@ -1,3 +1,4 @@
+import React from "react";
 import "./style.css";
 import logoNG from "../../images/logo_ng.png";
 import { UserForm } from "../../components/UserForm";

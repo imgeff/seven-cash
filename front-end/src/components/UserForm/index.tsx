@@ -1,4 +1,5 @@
 import "./style.css";
+import React from "react";
 import { PrimaryInput } from "../../subcomponents/Inputs";
 import { PrimaryButton, SecondaryButton } from "../../subcomponents/Buttons";
 import { useContext, useEffect, useState } from "react";
@@ -82,7 +83,12 @@ export function UserForm({
 						onChange={handleUserData}
 						spellCheck={false}
 					/>
-					<TextMedium style={{ color: "red" }}>{errorMessages.username}</TextMedium>
+					<TextMedium
+						data-testid="wrong-username-feedback"
+						style={{ color: "red" }}
+					>
+						{errorMessages.username}
+					</TextMedium>
 				</label>
 				<label htmlFor="userform-field-password">
 					Digite sua senha
@@ -96,26 +102,31 @@ export function UserForm({
 						spellCheck={false}
 					/>
 					<span
+						data-testid="toggle-password-display"
 						id="toggle-password-display"
 						className="daisy-tooltip"
 						data-tip={displayPassword ? "Esconder Senha" : "Mostrar Senha"}
+						onClick={handlePasswordDisplay}
 					>
 						{ displayPassword ? (
 							<Eye
 								size={24}
 								weight="duotone"
 								color="#565656"
-								onClick={handlePasswordDisplay}
 							/>) : (
 							<EyeSlash
 								size={24}
 								weight="duotone"
 								color="#565656"
-								onClick={handlePasswordDisplay}
 							/>
 						)}
 					</span>
-					<TextMedium style={{ color: "red" }}>{errorMessages.password}</TextMedium>
+					<TextMedium
+						data-testid="wrong-password-feedback"
+						style={{ color: "red" }}
+					>
+						{errorMessages.password}
+					</TextMedium>
 				</label>
 			</fieldset>
 			<footer>
@@ -125,7 +136,12 @@ export function UserForm({
 				>
 					{ isLoading ? <Loading size="50" color={colorLoading} /> : textSubmit}
 				</PrimaryButton>
-				<TextMedium style={{ color: "red" }}>{errorRequest}</TextMedium>
+				<TextMedium
+					data-testid="wrong-login-feedback"
+					style={{ color: "red" }}
+				>
+					{errorRequest}
+				</TextMedium>
 				<SecondaryButton onClick={handleNavigation}>{textNavigate}</SecondaryButton>
 			</footer>
 		</form>
