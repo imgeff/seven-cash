@@ -24,3 +24,5 @@ export async function requestRegister(body: IUser) {
 		return error.response?.data.message || error.message;
 	}
 }
+
+export default { requestLogin, requestRegister };
