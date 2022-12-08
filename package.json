@@ -6,7 +6,9 @@
   "scripts": {
     "install:all": "cd ./back-end && npm i && cd .. && cd ./front-end && npm i",
     "start:back": "cd ./back-end && npm start",
-    "start:front": "cd ./front-end && npm run dev"
+    "test:back": "cd ./back-end && npm run test:coverage",
+    "start:front": "cd ./front-end && npm run dev",
+    "test:front": "cd ./front-end && npm run coverage"
   },
   "repository": {
     "type": "git",
