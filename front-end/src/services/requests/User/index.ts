@@ -2,7 +2,7 @@ import axios from "axios";
 import { IUser } from "../../../components/UserForm/interfaces/IUser";
 
 const api = axios.create({
-	baseURL: `${process.env.REACT_APP_BASE_URL}/user`,
+	baseURL: `${import.meta.env.VITE_BASE_URL}/user`,
 });
 
 export async function requestLogin(body: IUser) {
