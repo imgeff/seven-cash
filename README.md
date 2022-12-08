@@ -15,13 +15,13 @@
 
   ![Tela Principal](images/Tela_Principal.png)
 
-  <h3>Fluxo para Transferir</h3><br />
+  <h3>Modal para Transferir</h3><br />
 
-  ![Fluxo para Transferir](images/Fluxo_para_Transferir.png)
+  ![Modal para Transferir](images/Modal_para_Transferir.png)
 
-   <h3>Fluxo para Visualização de Transferências</h3><br /> 
+   <h3>Modal para Visualização de Transferências</h3><br /> 
 
-  ![Fluxo para Visualização de Transferências](images/Fluxo_de_Visualizacao_de_Transferencias.png)
+  ![Modal para Visualização de Transferências](images/Modal_de_Visualizacao_de_Transferencias.png)
 
 </details>
 <br />
@@ -58,6 +58,18 @@ Rode a aplicação:
  - Ao finalizar aparecerá a mensagem **No issues found.** no terminal, e o docker terá subido a aplicação front-end no endereço http://localhost:3000/login
 
  - E a aplicação back-end no endereço http://localhost:3001/
+
+## Executando os testes
+
+Front-end:
+
+ - Abra um terminal na raiz do projeto
+ - Execute o comando `npm run test:front`
+
+Back-end:
+
+ - Abra um terminal na raiz do projeto
+ - Execute o comando `npm run test:back`
 
 
 
