@@ -4,7 +4,7 @@ import { getItemLocalStorage } from "../../../helpers/Localstorage";
 import { IUserLocalStorage } from "../../../helpers/Localstorage/interfaces/IUserLocalStorage";
 
 const api = axios.create({
-	baseURL: `${process.env.REACT_APP_BASE_URL}/transaction`,
+	baseURL: `${import.meta.env.VITE_BASE_URL}/transaction`,
 });
 
 export async function requestTransfer(body: ITransfer) {

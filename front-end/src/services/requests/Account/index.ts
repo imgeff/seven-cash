@@ -4,7 +4,7 @@ import { IUserLocalStorage } from "../../../helpers/Localstorage/interfaces/IUse
 import { IRequestTransactionsResponse } from "./interfaces/IRequestTransactionsResponse";
 
 const api = axios.create({
-	baseURL: `${process.env.REACT_APP_BASE_URL}/account`,
+	baseURL: `${import.meta.env.VITE_BASE_URL}/account`,
 });
 
 export async function requestBalance() {
