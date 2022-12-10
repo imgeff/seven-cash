@@ -25,7 +25,6 @@ export async function requestTransactions():
 		const user = getItemLocalStorage("user") as IUserLocalStorage;
 		api.defaults.headers.common.Authorization = user.token;
 		const { data } = await api.get("/transactions");
-		console.log(data);
 		return data;
 	} catch (error: any) {
 		console.error(error);
