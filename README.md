@@ -1,4 +1,4 @@
-# NG.Cash Challenge
+# SEVEN.CASH
 
 <details>
   <summary><strong>🖥️ Telas da Aplicação</strong></summary><br />
@@ -27,8 +27,8 @@
 <br />
 
 # Sobre o Projeto
-Este projeto foi um desafio técnico proposto pela [NG.Cash](https://ng.cash/), onde o objetivo era criar uma aplicação
-full-stack, simulando um cenário em que usuários da NG pudessem fazer registro ou login para ter acesso á funcionalidades de transferir 
+A Aplicação SEVEN.CASH foi um desafio técnico proposto pela [NG.Cash](https://ng.cash/), onde o objetivo era criar uma aplicação
+full-stack, simulando um cenário em que usuários pudessem fazer registro ou login para ter acesso á funcionalidades de transferir 
 para outros usuários e terem acesso á todas as transações que participaram. 
 
 ## Stack
@@ -42,7 +42,7 @@ para outros usuários e terem acesso á todas as transações que participaram.
 
 1 - **Clone o repositório**
 ```bash
-git clone git@github.com:imgeff/ng-cash-challenge.git
+git clone git@github.com:imgeff/seven-cash.git
 ```
 
 ## Executando aplicação
@@ -61,12 +61,12 @@ Rode a aplicação:
 
 ## Executando os testes
 
-Front-end:
+**Front-end:**
 
  - Abra um terminal na raiz do projeto
  - Execute o comando `npm run test:front`
 
-Back-end:
+**Back-end:**
 
  - Abra um terminal na raiz do projeto
  - Execute o comando `npm run test:back`
