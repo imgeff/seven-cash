@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import logoNG from "../../images/logo_ng.png";
+import Logo from "../../images/logo_white.png";
 import { UserForm } from "../../components/UserForm";
 import { IUser } from "../../components/UserForm/interfaces/IUser";
 import { setItemLocalStorage } from "../../helpers/Localstorage";
@@ -33,7 +33,7 @@ export function Login() {
 	return (
 		<section className="userform-area">
 			<header>
-				<img src={logoNG} alt="Logotipo da NG.Cash" />
+				<img src={Logo} alt="Logotipo da SEVEN" />
 			</header>
 			<UserForm
 				textSubmit="Entrar na Plataforma"
