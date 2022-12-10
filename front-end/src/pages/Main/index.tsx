@@ -10,9 +10,19 @@ import { AccountContextProvider } from "../../contexts/Account/AccountContextPro
 import { useContext } from "react";
 import { AccountContext } from "../../contexts/Account";
 import { TransactionModal } from "../../components/TransactionModal";
+import { Navigate } from "react-router-dom";
+import { getItemLocalStorage } from "../../helpers/Localstorage";
 
 export function Main() {
 	const { errorRequest } = useContext(AccountContext);
+
+	function userIsAuthenticated() {
+		const user = getItemLocalStorage("user");
+		if (user) return true;
+		return false;
+	}
+
+	if (userIsAuthenticated() === false) return (<Navigate to="/login" />);
 
 	return (
 		<AccountContextProvider>
