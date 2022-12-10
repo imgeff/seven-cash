@@ -5,8 +5,9 @@
 
 #register header img {
 
-	@apply w-[385px]
-		h-[224px] ;
+	@apply aspect-square
+		w-60
+		mb-10 ;
 }
 
 #register #userform-fields label {

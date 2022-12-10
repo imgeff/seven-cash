@@ -1,5 +1,5 @@
 import "./style.css";
-import logoNG from "../../images/logo_ng.png";
+import Logo from "../../images/logo_white.png";
 import { SignOut } from "phosphor-react";
 import { useNavigate } from "react-router-dom";
 import { removeItemLocalStorage } from "../../helpers/Localstorage";
@@ -15,7 +15,7 @@ export function NavHeader() {
 	return(
 		<header id="nav-header">
 			<figure>
-				<img src={logoNG} alt="Logotipo da NG.Cash" />
+				<img src={Logo} alt="Logotipo da SEVEN" />
 			</figure>
 			<nav>
 				<span className="daisy-tooltip daisy-tooltip-right" data-tip="Sair">

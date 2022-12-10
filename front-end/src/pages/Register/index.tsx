@@ -1,6 +1,6 @@
 import "./style.css";
 import React from "react";
-import logoNGBlack from "../../images/logo_ng_black.png";
+import Logo from "../../images/logo_black.png";
 import { UserForm } from "../../components/UserForm";
 import { IUser } from "../../components/UserForm/interfaces/IUser";
 import { setItemLocalStorage } from "../../helpers/Localstorage";
@@ -33,7 +33,7 @@ export function Register() {
 	return (
 		<section className="userform-area" id="register">
 			<header>
-				<img src={logoNGBlack} alt="Logotipo da NG.Cash" />
+				<img src={Logo} alt="Logotipo da SEVEN" />
 			</header>
 			<UserForm
 				textSubmit="Criar Conta"

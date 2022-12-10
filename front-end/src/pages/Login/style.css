@@ -7,3 +7,10 @@
 		justify-center
 		items-center ;
 }
+
+.userform-area header img {
+
+	@apply aspect-square
+		w-60
+		mb-10 ;
+}
